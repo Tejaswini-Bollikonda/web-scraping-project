@@ -1,3 +1,5 @@
+Version: v1 (Basic scraper with filtering & links)
+
 # Web Scraping Project (Python)
 
 ## Overview
