@@ -1,70 +1,125 @@
-Version: v1 (Basic scraper with filtering & links)
+Version: v2 (Multi-page scraping + filtering + job links)
 
 # Web Scraping Project (Python)
 
 ## Overview
-I built a Python-based web scraper that extracts data from a website and stores it in a structured format for analysis.
-The script collects quotes, authors, and tags from single or multiple pages and saves the data into a CSV file.
+
+This project is a Python-based web scraper that extracts job data from a website and stores it in a structured format (CSV).
+
+It collects job titles, company names, locations, and links, and filters relevant roles like Python, Data, AI, and related fields.
+
+This project simulates a real-world data pipeline:
+**Extract → Filter → Store**
 
 ---
 
 ## Features
-- Scrapes data from a live website
-- Supports multi-page scraping
-- Extracts quotes, authors, and tags
-- Stores structured data in CSV format
-- Performs basic data analysis using Pandas
+
+* Scrapes job data from a live website
+* Supports multi-page scraping (pagination)
+* Extracts:
+
+  * Job Title
+  * Company
+  * Location
+  * Job Link
+* Filters relevant jobs (Python, Data, AI, etc.)
+* Removes duplicate entries
+* Saves clean structured data in CSV format
 
 ---
 
 ## Tech Stack
-- Python
-- Requests
-- BeautifulSoup
-- Pandas
+
+* Python
+* Requests
+* BeautifulSoup
+* Pandas
 
 ---
 
-## How It Works
-1. Sends a request to the website using `requests`
-2. Parses HTML content using `BeautifulSoup`
-3. Extracts quotes, authors, and tags
-4. Loops through multiple pages to collect more data(after upgrade)
-5. Stores the extracted data into a Pandas DataFrame
-6. Saves the data into a CSV file
+## Project Flow (Step-by-Step)
+
+1. Send request to website using `requests`
+2. Parse HTML using `BeautifulSoup`
+3. Extract job data (title, company, location, link)
+4. Loop through multiple pages (pagination)
+5. Store data into a Pandas DataFrame
+6. Apply filtering based on keywords
+7. Remove duplicate jobs
+8. Save output into CSV files
 
 ---
 
-## How to Run
+## How to Run (Beginner Friendly)
 
-1. Install dependencies:
+### Step 1: Install dependencies
+
+```bash or cmd
 pip install requests beautifulsoup4 pandas
+```
 
-2. Run the script:
-python scraper.py
+### Step 2: Run the script
 
----
-
-## Output
-- quotes.csv → data from single page  
-- quotes_all_pages.csv → data from multiple pages(after upgrade)  
+```bash or cmd
+python job_scraper.py
+```
 
 ---
 
-## What I Learned
-- How to extract real-world data from websites
-- Understanding HTML structure
-- Building a simple data pipeline (extract → transform → load)
-- Debugging environment issues
+## Output Files
+
+* `jobs.csv` → All scraped jobs
+* `filtered_jobs.csv` → Only relevant jobs (Python, Data, AI, etc.)
 
 ---
 
-## Next Steps
-- Build job scraping project (Indeed/LinkedIn style)
-- Store data in SQL database
-- Automate the pipeline
+## Example Output
+
+| Title                   | Company | Location | Link        |
+| ----------------------- | ------- | -------- | ----------- |
+| Senior Python Developer | XYZ     | USA      | https://... |
+
+---
+
+## Key Learnings
+
+* Web scraping using BeautifulSoup
+* Handling real-world HTML data
+* Data cleaning & filtering using Pandas
+* Building a simple data pipeline
+* Working with CSV datasets
+* Debugging and fixing errors (permissions, duplicates, etc.)
+
+---
+
+## Current Version
+
+### v1
+
+* Basic scraping
+* Single page extraction
+* CSV output
+
+### v2 (Current)
+
+* Multi-page scraping (pagination)
+* Keyword-based filtering
+* Duplicate removal
+* Job links added
+
+---
+
+## Next Improvements
+
+* Add delay (avoid blocking)
+* Add error handling (try/except)
+* Sort jobs (latest first)
+* Store data in database (SQL)
+* Automate pipeline
 
 ---
 
 ## Author
+
 Tejaswini Bollikonda
