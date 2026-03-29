@@ -6,8 +6,13 @@ import pandas as pd
 base_url = "https://realpython.github.io/fake-jobs/"
 jobs = []
 
-for page in range(1, 3):  # change to 5 later
-    url = f"{base_url}?page={page}"
+for page in range(1, 6):  
+   if page == 1:
+        url = base_url
+    else:
+        url = f"{base_url}page/{page}/"
+
+    print(f"Scraping page {page}...")
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
 
@@ -25,11 +30,11 @@ for page in range(1, 3):  # change to 5 later
         })
 
 
-# Step 5: Save to CSV
+# Step 2: Save to CSV
 df = pd.DataFrame(jobs)
 df.to_csv("jobs.csv", index=False)
 
-# Step 6: Smarter filtering (FINAL FIXED)
+# Step 3: Smarter filtering (FINAL FIXED)
 
 keywords = [
     "python developer",
