@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
-# Step 1: Smarter filtering (FINAL FIXED)
+# Step 1: Smarter filtering
 relevant_roles = [
     "python",
     "genai",
