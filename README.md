@@ -1,4 +1,7 @@
+Version: v3 (Improved filtering logic + keyword matching)
 Version: v2 (Multi-page scraping + filtering + job links)
+Version: v1 (Basic singscraper with filtering)
+
 
 # Web Scraping Project (Python)
 
@@ -23,7 +26,7 @@ This project simulates a real-world data pipeline:
   * Company
   * Location
   * Job Link
-* Filters relevant jobs (Python, Data, AI, etc.)
+* Smart keyword-based filtering (v3 improved logic) (Python, Data, AI, etc.)
 * Removes duplicate entries
 * Saves clean structured data in CSV format
 
@@ -45,13 +48,13 @@ This project simulates a real-world data pipeline:
 3. Extract job data (title, company, location, link)
 4. Loop through multiple pages (pagination)
 5. Store data into a Pandas DataFrame
-6. Apply filtering based on keywords
+6. Apply keyword-based filtering (v3 improved logic)
 7. Remove duplicate jobs
 8. Save output into CSV files
 
 ---
 
-## How to Run (Beginner Friendly)
+## How to Run
 
 ### Step 1: Install dependencies
 
@@ -82,17 +85,6 @@ python job_scraper.py
 
 ---
 
-## Key Learnings
-
-* Web scraping using BeautifulSoup
-* Handling real-world HTML data
-* Data cleaning & filtering using Pandas
-* Building a simple data pipeline
-* Working with CSV datasets
-* Debugging and fixing errors (permissions, duplicates, etc.)
-
----
-
 ## Current Version
 
 ### v1
@@ -101,12 +93,17 @@ python job_scraper.py
 * Single page extraction
 * CSV output
 
-### v2 (Current)
+### v2 
 
 * Multi-page scraping (pagination)
 * Keyword-based filtering
 * Duplicate removal
 * Job links added
+
+### v3
+* Improved filtering logic
+* Better keyword matching
+* Cleaner and more accurate results
 
 ---
 
@@ -118,8 +115,4 @@ python job_scraper.py
 * Store data in database (SQL)
 * Automate pipeline
 
----
 
-## Author
-
-Tejaswini Bollikonda
