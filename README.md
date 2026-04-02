@@ -112,11 +112,11 @@ python job_scraper.py
 * Cleaner and more accurate results
 
 ### v4(Current)
-Error handling with try/except
-Safe request handling
-Skips failed pages/jobs instead of crashing
-Delay added to avoid blocking
-More stable and production-like scraper
+* Error handling with try/except
+* Safe request handling
+* Skips failed pages/jobs instead of crashing
+* Delay added to avoid blocking
+* More stable and production-like scraper
 
 ---
 
