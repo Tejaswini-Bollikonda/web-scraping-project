@@ -1,3 +1,4 @@
+Version: v4 (Error handling + safe scraping + improved filtering)
 Version: v3 (Improved filtering logic + keyword matching)
 Version: v2 (Multi-page scraping + filtering + job links)
 Version: v1 (Basic singscraper with filtering)
@@ -28,6 +29,9 @@ This project simulates a real-world data pipeline:
   * Job Link
 * Smart keyword-based filtering (v3 improved logic) (Python, Data, AI, etc.)
 * Removes duplicate entries
+* Error handling (prevents crashes)
+* Safe scraping (handles failed requests/pages)
+* Delay between requests (avoids blocking)
 * Saves clean structured data in CSV format
 
 ---
@@ -48,9 +52,11 @@ This project simulates a real-world data pipeline:
 3. Extract job data (title, company, location, link)
 4. Loop through multiple pages (pagination)
 5. Store data into a Pandas DataFrame
-6. Apply keyword-based filtering (v3 improved logic)
+6. Apply keyword-based filtering
 7. Remove duplicate jobs
-8. Save output into CSV files
+8. Handle errors safely using `try/except`  
+9. Add delay between requests to avoid blocking
+10. Save output into CSV files
 
 ---
 
@@ -105,14 +111,21 @@ python job_scraper.py
 * Better keyword matching
 * Cleaner and more accurate results
 
+### v4(Current)
+Error handling with try/except
+Safe request handling
+Skips failed pages/jobs instead of crashing
+Delay added to avoid blocking
+More stable and production-like scraper
+
 ---
 
 ## Next Improvements
 
-* Add delay (avoid blocking)
-* Add error handling (try/except)
+* Add job scoring (better relevance ranking)
 * Sort jobs (latest first)
 * Store data in database (SQL)
-* Automate pipeline
+* Automate pipeline (scheduler)
+* Deploy as a service
 
 
